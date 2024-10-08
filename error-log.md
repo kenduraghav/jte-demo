@@ -1,5 +1,5 @@
 
-<p>When reading from precompiled classes using below. </p> 
+<p>When reading from precompiled classes using below code. </p> 
 
 <code>
 templateEngine = TemplateEngine.createPrecompiled(Path.of("jte-classes"),ContentType.Html);
