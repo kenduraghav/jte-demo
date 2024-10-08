@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import gg.jte.CodeResolver;
 import gg.jte.ContentType;
 import gg.jte.TemplateEngine;
 import gg.jte.TemplateOutput;
 import gg.jte.output.StringOutput;
+import gg.jte.resolve.DirectoryCodeResolver;
 
 @WebServlet("/hello-jte")
 public class HelloServlet extends HttpServlet {
@@ -22,14 +24,14 @@ public class HelloServlet extends HttpServlet {
 
 	public HelloServlet() {
 		super();
-		 templateEngine = TemplateEngine.createPrecompiled(Path.of("jte-classes"),ContentType.Html);
+		// templateEngine = TemplateEngine.createPrecompiled(Path.of("jte-classes"),ContentType.Html);
 //		 templateEngine = TemplateEngine.createPrecompiled(ContentType.Html);;
 
 		// when using code resolver
 		// looking into gg.jte.TemplateNotFoundException: index.jte not found (tried to
 		// load file at ${STS_INSTALLATION_LOC}\src\main\jte\index.jte)
-//		CodeResolver codeResolver = new DirectoryCodeResolver(Path.of("src/main/jte"));
-//		templateEngine = TemplateEngine.create(codeResolver, ContentType.Html);
+		CodeResolver codeResolver = new DirectoryCodeResolver(Path.of("src/main/jte"));
+		templateEngine = TemplateEngine.create(codeResolver, ContentType.Html);
 //          templateEngine.setBinaryStaticContent(true);
 	}
 

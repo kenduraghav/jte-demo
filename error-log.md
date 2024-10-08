@@ -12,7 +12,7 @@ templateEngine = TemplateEngine.createPrecompiled(Path.of("jte-classes"),Content
 	<strong>Note:</strong> The below  error is occuring 
 </div>
  
- <br>
+<br>
 <img src="src/main/webapp/assets/error.jpg" alt="Error Log" width="500" height="300"/>
 
 
@@ -32,4 +32,8 @@ templateEngine = TemplateEngine.create(codeResolver, ContentType.Html);
 <strong>Note:</strong> The below  error is occuring <br>
 
 <code>index.jte not found (tried to load file at ${STS_INSTALLATION_LOC}\src\main\jte\index.jte)</code>
+
+
+<br>
+<img src="src/main/webapp/assets/error1.jpg" alt="Error Log" width="500" height="300"/>
 
